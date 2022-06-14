@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Employee and Asset Database Details</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>Employee and Asset Database Details</h1>
+    <form>
+      <div class="form-body">
+        <h2> Employee Details</h2>
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label for="Global ID" class="label-title">Global ID :  *</label>
+            <input type="number" id="GID" name="GID" class="form-input" placeholder="Enter your Global ID" required="required" />
+          </div>
+          <div class="form-group right">
+            <label for="Name" class="label-title">Name : *</label>
+            <input type="text" id="Emp_Name" name="Emp_Name" class="form-input" placeholder="Enter you Name" required="required" />
+          </div>
+        </div>
+
+        <div class="horizontal-group">
+            <div class="form-group left">
+              <label for="Band" class="label-title">Band : *</label>
+              <input type="text" id="Band" name="Band" class="form-input" placeholder="Enter a Band" required="required" />
+            </div>
+            <div class="form-group right">
+              <label for="Cost center Name" class="label-title">Cost center Name : *</label>
+              <input type="text" id="CCName" name="CCName" class="form-input" placeholder="Enter a Cost center Name" required="required" />
+            </div>
+          </div>
+        <div class="horizontal-group">
+            <div class="form-group right">
+              <label for="Cost center ID" class="label-title">Cost center ID : *</label>
+              <input type="text" id="CCID" name="CCID" class="form-input" placeholder="Enter a Cost center ID" required="required" />
+            </div>
+          </div>
+        <div class="horizontal-group">
+            <div class="form-group left">
+                <label for="Date Of Joining">Date Of Joining :</label>
+                <input type="date" id="DOJ" name="DOJ" required="required" />
+            </div>
+            <div class="form-group right">
+                <label for="email">Enter your Work Email:</label>
+                <input type="email" id="W_Email" name="W_Email" required="required" />
+            </div>
+        </div>
+        <div class="horizontal-group">
+            <div class="form-group left">
+              <label for="Manager" class="label-title">Manager : *</label>
+              <input type="text" id="Manager" name="Manager" class="form-input" placeholder="Enter your Manager Name" required="required" />
+            </div>
+            <div class="form-group right">
+                <label for="Band change date">Band change date :</label>
+                <input type="date" id="Band_Change_date" name="Band_Change_date" required="required" />
+            </div>
+        </div>
+        <div class="horizontal-group">
+            <div class="form-group left">
+              <label for="Lead" class="label-title">Lead : *</label>
+              <input type="text" id="Lead" name="Lead" class="form-input" placeholder="Enter your Lead Name" required="required" />
+            </div>
+            <div class="form-group right">
+                <label for="AGM / VP" class="label-title">AGM / VP Name : *</label>
+                <input type="text" id="AGM_VP" name="AGM_VP" class="form-input" placeholder="Enter your AGM / VP Name " required="required" />
+            </div>
+        <div class="horizontal-group">
+            <div class="form-group left" >
+              <label class="label-title">Job Role : *</label>
+              <select class="form-input" id="Job_Role" name="Job_Role">
+                <option value="Production">Production </option>
+                <option value="Support">Support </option>
+                <option value="SPOC">SPOC </option>
+                <option value="Trainee">Trainee </option>
+              </select>
+            </div>
+            <div class="form-group right">
+                <label for="Trainer's Name " class="label-title">Trainer's Name : *</label>
+                <input type="text" id="T_Name" name="T_Name" class="form-input" placeholder="Enter your Trainer's Name" required="required" />
+            </div>
+        </div>
+        <div class="horizontal-group">
+            <div class="form-group left" >
+              <label class="label-title">You are SPOC : *</label>
+              <select class="form-input" id="SPOC" name="SPOC">
+                <option value="Yes">Yes </option>
+                <option value="No">No </option>
+              </select>
+            </div>
+            <div class="form-group right">
+                <label for="Core Process" class="label-title">Core Process : *</label>
+                <input type="text" id="Core_Processe" name="Core_Process" class="form-input" placeholder="Enter your Core Process" required="required" />
+            </div>
+        </div>
+
+        <div class="horizontal-group">
+            <div class="form-group left" >
+                <label for="Sub Process" class="label-title">Sub Process : *</label>
+                <input type="text" id="Sub Processe" name="Sub_Process" class="form-input" placeholder="Enter your Sub Process" required="required" />
+            </div>
+            <div class="form-group right">
+                <label for="Higher_Qualification" class="label-title">Higher Qualification : *</label>
+                <input type="text" id="Higher_Qualification" name="Higher_Qualification" class="form-input" placeholder="Enter your Higher Qualification" required="required" />
+            </div>
+        </div>
+
+        <div class="horizontal-group">
+            <div class="form-group left" >
+                <label>Gender</label>
+					<ul>
+						<li>
+							<label class="radio_wrap">
+								<input type="radio" name="gender" value="male" class="input_radio" checked>
+								<span>Male</span>
+							</label>
+						</li>
+						<li>
+							<label class="radio_wrap">
+								<input type="radio" name="gender" value="female" class="input_radio">
+								<span>Female</span>
+							</label>
+						</li>
+					</ul>
+            </div>
+            <div class="form-group right">
+                <label for="Date Of Birth">Date Of Birth :</label>
+                <input type="date" id="DOB" name="DOB" required="required" />
+            </div>
+        </div>
+
+        <div class="horizontal-group">
+            <div class="form-group left" >
+                <label class="label-title">Work Location : *</label>
+                    <select class="form-input" id="Work_Location" name="Work_Location">
+                      <option value="Base">WFH-Base Location </option>
+                      <option value="Non Base">WFH-Non Base Location </option>
+                      <option value="RTO">RTO</option>
+                    </select>
+            </div>
+        </div>
+
+        <div class="horizontal-group">
+            <div class="form-group left" >
+                <label for="Previous Team" class="label-title">Previous Team : *</label>
+                <input type="text" id="P_Team" name="P_Team" class="form-input" placeholder="Enter your Previous Team" required="required" />
+            </div>
+            <div class="form-group right"> 
+                <label class="label-title">Vaccine Action Plan : *</label>
+                    <select class="form-input" id="Vaccine_Action_Plan" name="Vaccine_Action_Plan">
+                      <option value="Provided by FAI">Provided by FAI </option>
+                      <option value="Self">Self </option>
+                    </select>
+            </div>
+            <div class="form-group left" >
+                <label class="label-title">Vaccinated Status : *</label>
+                    <select class="form-input" id="Vaccinated_Status" name="Vaccinated_Status">
+                      <option value="Yes">Doseage 1 </option>
+                      <option value="No">Doseage 2 </option>
+                    </select>
+            </div>
+            <div class="form-group right"> 
+                <label class="label-title">Vaccination Certificate Uploaded in Workday : *</label>
+                    <select class="form-input" id="Vaccination_Certificate_Uploaded" name="Vaccination_Certificate_Uploaded">
+                      <option value="Yes">Yes </option>
+                      <option value="No">No </option>
+                    </select>
+            </div>
+        </div>
+
+        <div class="horizontal-group">
+            <div class="form-group left" >        
+                <label class="label-title">Accomodation : *</label>
+                    <select class="form-input" id="Accomodation" name="Accomodation">
+                      <option value="Stay with Family">Family </option>
+                      <option value="Provided by Office">Provided by Office </option>
+                    </select>
+            </div>
+            <div class="form-group right">
+                <label for="email">Enter your Personal Email:</label>
+                <input type="email" id="Personal_Email" name="Personal_Email" required="required" />
+            </div>
+        </div>
+        <div class="horizontal-group">
+            <div class="form-group left" >        
+                <label class="label-title">Insurance Type : *</label>
+                    <select class="form-input" id="Insurance" name="Insurance">
+                      <option value="Medical Insurance">Medical Insurance </option>
+                      <option value="ESIC">ESIC </option>
+                    </select>
+            </div>
+            <div class="form-group right">
+                <label for="Emergency Contact Name" class="label-title">Emergency Contact Name : *</label>
+                <input type="text" id="ECName" name="ECName" class="form-input" placeholder="Enter you Emergency Contact Name" required="required" />
+            </div>
+        </div>
+
+        <div class="horizontal-group">
+            <div class="form-group left" >  
+                <label for="Emergency Contact Number" class="label-title">Emergency Contact Number : *</label>
+                <input type="number" id="ECNumber" name="ECNumber" class="form-input" placeholder="Enter you Emergency Contact Number" required="required" />
+            </div>
+        </div>
+        <div class="form-group right">
+          <label for="Personal Contact Name" class="label-title">Personal Contact Number : *</label>
+          <input type="text" id="Mob" name="Mob" class="form-input" placeholder="Enter you Personal Contact Number" required="required" />
+        </div>
+        <div class="horizontal-group">
+            <div class="form-group left" >
+                <label>Marital Status</label>
+					<ul>
+						<li>
+							<label class="radio_wrap">
+								<input type="radio" name="Marital" value="Single" class="input_radio" checked>
+								<span>Single</span>
+							</label>
+						</li>
+						<li>
+							<label class="radio_wrap">
+								<input type="radio" name="Marital" value="Married" class="input_radio">
+								<span>Married</span>
+							</label>
+						</li>
+					</ul>
+            </div>
+            <div class="form-group right">
+                <label>Mode of Transport</label>
+					<ul>
+						<li>
+							<label class="radio_wrap">
+								<input type="radio" name="Transport" value="Self" class="input_radio" checked>
+								<span>Self</span>
+							</label>
+						</li>
+						<li>
+							<label class="radio_wrap">
+								<input type="radio" name="Transport" value="Cab" class="input_radio">
+								<span>Cab</span>
+							</label>
+						</li>
+                        <li>
+							<label class="radio_wrap">
+								<input type="radio" name="Transport" value="Public Transport" class="input_radio">
+								<span>Public Transport</span>
+							</label>
+						</li>
+					</ul>
+            </div>
+
+        <div class="horizontal-group">
+            <div class="form-group left" >
+                <label for="Distance from Office" class="label-title">Distance from Office : *</label>
+                <input type="number" id="Distance" name="Distance" class="form-input" placeholder="Distance from Office in KMS" required="required" />
+            </div>
+            <div class="form-group right">
+                <label for="Pickup Point" class="label-title">Pickup Point : *</label>
+                <input type="text" id="Pickup" name="Pickup" class="form-input" placeholder="Enter you Pickup Point" required="required" />
+            </div>
+        </div>
+
+        <div class="horizontal-group">
+            <div class="form-group left" >
+                <label for="Address">Residential Address:</label>
+                <textarea id="Address" name="Address" rows="4" cols="50"></textarea>
+            </div>
+            <div class="form-group right">
+                <label for="City - Pin" class="label-title">City - Pin : *</label>
+                <input type="text" id="City_Pin" name="City_Pin" class="form-input" placeholder="Enter you City & Pin" required="required" />
+            </div>
+        </div>
+        
+        <div class="horizontal-group">
+            <div class="form-group right">
+              <label class="label-title">Native State : *</label>
+              <select class="form-input" id="Native_State" name="Native_State">
+                <option value="AN">Andaman and Nicobar Islands</option>
+                <option value="AP">Andhra Pradesh</option>
+                <option value="AR">Arunachal Pradesh</option>
+                <option value="AS">Assam</option>
+                <option value="BR">Bihar</option>
+                <option value="CH">Chandigarh</option>
+                <option value="CT">Chhattisgarh</option>
+                <option value="DN">Dadra and Nagar Haveli</option>
+                <option value="DD">Daman and Diu</option>
+                <option value="DL">Delhi</option>
+                <option value="GA">Goa</option>
+                <option value="GJ">Gujarat</option>
+                <option value="HR">Haryana</option>
+                <option value="HP">Himachal Pradesh</option>
+                <option value="JK">Jammu and Kashmir</option>
+                <option value="JH">Jharkhand</option>
+                <option value="KA">Karnataka</option>
+                <option value="KL">Kerala</option>
+                <option value="LA">Ladakh</option>
+                <option value="LD">Lakshadweep</option>
+                <option value="MP">Madhya Pradesh</option>
+                <option value="MH">Maharashtra</option>
+                <option value="MN">Manipur</option>
+                <option value="ML">Meghalaya</option>
+                <option value="MZ">Mizoram</option>
+                <option value="NL">Nagaland</option>
+                <option value="OR">Odisha</option>
+                <option value="PY">Puducherry</option>
+                <option value="PB">Punjab</option>
+                <option value="RJ">Rajasthan</option>
+                <option value="SK">Sikkim</option>
+                <option value="TN">Tamil Nadu</option>
+                <option value="TG">Telangana</option>
+                <option value="TR">Tripura</option>
+                <option value="UP">Uttar Pradesh</option>
+                <option value="UT">Uttarakhand</option>
+                <option value="WB">West Bengal</option>
+              </select>
+            </div>
+            <div class="form-group right">
+                <label for="Native - District" class="label-title">Native - District : *</label>
+                <input type="text" id="Native_District" name="Native_District" class="form-input" placeholder="Enter you Native District" required="required" />
+            </div>
+        </div>
+        </div>
+
+        
+    <h2> Asset Details</h2>
+
+        <div class="horizontal-group">
+          <div class="form-group left" >
+            <label class="label-title">Type of Asset : *</label>
+            <select class="form-input" id="Type_of_Asset" name="Type_of_Asset">
+              <option value="Company Desktop">Company Desktop </option>
+              <option value="Company Laptop">Company Laptop </option>
+              <option value="Rental Laptop">Rental Laptop </option>
+              <option value=" Personal Desktop">Personal Desktop </option>
+              <option value="Personal Laptop">Personal Laptop </option>
+              <option value="No Asset Allocated">No Asset Allocated </option>
+            </select>
+          </div>
+          <div class="form-group right">
+            <label for="CPU/ Laptop (Serial No.)" class="label-title">CPU/ Laptop (Serial No.) : *</label>
+            <input type="text" id="CPU_Laptop" name="CPU_Laptop" class="form-input" placeholder="Enter your CPU/ Laptop (Serial No.)" required="required" />
+          </div>
+        </div>
+
+        <div class="horizontal-group">
+          <div class="form-group left" >
+            <label for="Docking Station (Serial No.)" class="label-title">Docking Station (Serial No.) : *</label>
+            <input type="text" id="Docking_Station" name="Docking_Station" class="form-input" placeholder="Enter your Docking Station (Serial No.)" required="required" />
+          </div>
+          <div class="form-group right">
+            <label for="Monitor 1 (Serial No.)" class="label-title">Monitor 1 (Serial No.) : *</label>
+            <input type="text" id="Monitor_1" name="Monitor_1" class="form-input" placeholder="Enter your Monitor 1 (Serial No.)" required="required" />
+          </div>
+          <div class="form-group left" >
+            <label for="Monitor 2 (Serial No.)" class="label-title">Monitor 2 (Serial No.) : *</label>
+            <input type="text" id="Monitor_2" name="Monitor_2" class="form-input" placeholder="Enter your Monitor 2 (Serial No.)" required="required" />
+          </div>
+        </div>
+
+        <div class="horizontal-group">
+          <div class="form-group left" >
+            <label for="Desk#" class="label-title">Desk Number : *</label>
+            <input type="text" id="Desk_No" name="Desk_No" class="form-input" placeholder="Enter your Desk#" required="required" />
+          </div>
+          <div class="form-group right">
+            <label class="label-title">Dual Moniter SetUp : *</label>
+            <select class="form-input" id="Dual_Moniter_SetUp" name="Dual_Moniter_SetUp">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="horizontal-group">
+          <div class="form-group left" >
+            <label class="label-title">Internet availability : *</label>
+            <select class="form-input" id="Internet_availability" name="Internet_availability">
+              <option value="Dongle">Dongle </option>
+              <option value="Personal Dongle"> Personal Dongle </option>
+              <option value="Broadband">Broadband </option>
+              <option value=" Mobile HotSpot"> Mobile HotSpot </option>
+            </select>
+          </div>
+          <div class="form-group right">
+            <label class="label-title">Head Phone availability : *</label>
+            <select class="form-input" id="Head_Phone_availability" name="Head_Phone_availability">
+              <option value="Company Provided">Company Provided </option>
+              <option value="Personal Head Phone">Personal Head Phone </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="horizontal-group">
+          <div class="form-group left" >
+            <label class="label-title">Additional Key Board  : *</label>
+            <select class="form-input" id="Additional_Key_Board" name="Additional_Key_Board">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="form-group right">
+            <label class="label-title">Mouse  : *</label>
+            <select class="form-input" id="Mouse" name="Mouse">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="horizontal-group">
+          <div class="form-group left" >
+            <label class="label-title">UPS for the backup in case of power outage : *</label>
+            <select class="form-input" id="UPS" name="UPS">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="form-group right">
+              <label class="label-title">Proper Table availability  : *</label>
+              <select class="form-input" id="Proper_Table_availability" name="Proper_Table_availability">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+          </div>
+        </div>
+
+        <div class="horizontal-group">
+          <div class="form-group left" >
+            <label class="label-title">Proper Chair availability : *</label>
+            <select class="form-input" id="Proper_Chair_availability " name="Proper_Chair_availability">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="form-group right">
+              <label class="label-title">Spike Buster : *</label>
+              <select class="form-input" id="Spike_Buster" name="Spike_Buster">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+          </div>
+        </div>
+      <div class="form-footer">
+        <span>* Required</span>
+        <button type="submit" class="btn">Update</button>
+      </div>
+    </form>
+  </body>
+</html>
