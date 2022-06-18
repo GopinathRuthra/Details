@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Employee and Asset Database Details</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"  />
+    <!-- <script src="{{url_for('static', filename='index.js')}}"></script> -->
+    <script src="../static/index.js"></script>
   </head>
   <body>
     <h1>Employee and Asset Database Details</h1>
@@ -69,15 +71,15 @@
         <div class="horizontal-group">
             <div class="form-group left" >
               <label class="label-title">Job Role : *</label>
-              <select class="form-input" id="Job_Role" name="Job_Role">
+              <select class="form-input" id="Job_Role" name="Job_Role" onchange="showMe(this)">
                 <option value="Production">Production </option>
                 <option value="Support">Support </option>
                 <option value="Trainee">Trainee </option>
               </select>
             </div>
-            <div class="form-group right">
+            <div id="test_div" class="form-group right" style="display: none">
                 <label for="Trainer's Name " class="label-title">Trainer's Name : *</label>
-                <input type="text" id="T_Name" name="T_Name" class="form-input" placeholder="Enter your Trainer's Name" required="required" />
+                <input type="text" id="T_Name" name="T_Name" class="form-input" placeholder="Enter your Trainer's Name"/>
             </div>
         </div>
         <div class="horizontal-group">
@@ -458,4 +460,19 @@
       </div>
     </form>
   </body>
+
+  <script>
+
+    function showMe(e) {
+      var strdisplay = e.options[e.selectedIndex].value;
+       var e = document.getElementById("test_div");
+      if(strdisplay == "Trainee") {
+        e.style.display = "block";
+        document.getElementById("T_Name").setAttribute("required","true");
+      } else {
+        e.style.display = "none";
+        document.getElementById("T_Name").removeAttribute("required");
+      }
+    }
+  </script>    
 </html>
