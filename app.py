@@ -1,16 +1,41 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template,redirect,url_for, request
 import sqlite3
 
 app=Flask(__name__)
 
 @app.route('/')
-@app.route('/index')
-
 def homepage():
-    return render_template('index.html')
+    return render_template('Front.html')
+
+@app.route('/index')
+def index():
+    return render_template("index.html")
+
+@app.route('/view')
+def view():
+    con = sqlite3.connect("Asset.db")
+    cur = con.cursor()  
+    cur.execute("select * from Data")  
+    rows = cur.fetchall()  
+    # print(rows)
+    return render_template("display.html",rows = rows) 
+
+@app.route('/delete', methods=['POST','GET'])
+def delete():
+    if request.method=="POST":
+        id = request.form.get('GID')
+        con = sqlite3.connect("Asset.db") 
+        cur = con.cursor()  
+        cur.execute("delete from Data where GID = ?",[id])
+        con.commit()
+        print("deleted successfully")
+        return redirect(url_for('view'))
+    else:
+        return render_template("delete.html")
+
 
 @app.route('/display', methods=['POST','GET'])
-def index():
+def display():
     rows = list()
     if request.method=="POST":
         a=request.form.get('GID')
@@ -79,17 +104,16 @@ def index():
                 con.commit()  
                 print("Customer successfully Added")  
                 
-                cur.execute("select * from Data")  
-                rows = cur.fetchall()
-                print(rows)  
+                # cur.execute("select * from Data")  
+                # rows = cur.fetchall()
+                # print(rows)  
         except Exception as e:   
             con.rollback()
             print(e)  
             print("We can not add the customer to the list" ) 
         finally:  
-            
-            return render_template("display.html",rows = rows) 
-            con.close() 
+            con.close()
+            return redirect(url_for('view')) 
 
     if __name__=='__main__':
         app.run(debug=True)
