@@ -68,16 +68,16 @@ def index():
         a2=request.form.get('Spike_Buster')
 
         try:  
-            with sqlite3.connect("Emp_Asset.db") as con:
+            with sqlite3.connect("Asset.db") as con:
                 print("Connected")    
                 cur = con.cursor()  
                 print("Got cursor")  
-                cur.execute("INSERT into Details (GID, Emp_Name, Band, CCName, CCID, DOJ, W_Email, Manager, Band_Change_Date, Lead, AGM_VP, Job_Role, T_Name, SPOC, Core_Process, Sub_process, Higher_Qualification, GENDER, DOB, Work_Location, P_Team, Vaccine_Action_Plan, Vaccinated_Status, Vaccination_Certificate_Uploaded, Accomodation, Personal_Email, Insurance, ECName, ECNumber, Mob, Marital, Transport, Distance, Pickup, Address, City_Pin, Native_District, Native_State, Type_of_Asset, CPU_Laptop, Docking_Station, Monitor_1, Monitor_2, Desk_No, Dual_Moniter_SetUp, Internet_availability, Head_Phone_availability, Additional_Key_Board, Mouse, UPS, Proper_Table_availability, Proper_Chair_availability, Spike_Buster) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a1,b1,c1,d1,e1,f1,g1,h1,i1,j1,k1,l1,m1,n1,o1,p1,q1,r1,s1,t1,u1,v1,w1,x1,y1,z1,a2))  
+                cur.execute("INSERT into Data (GID, Emp_Name, Band, CCName, CCID, DOJ, W_Email, Manager, Band_Change_Date, Lead, AGM_VP, Job_Role, T_Name, SPOC, Core_Process, Sub_process, Higher_Qualification, GENDER, DOB, Work_Location, P_Team, Vaccine_Action_Plan, Vaccinated_Status, Vaccination_Certificate_Uploaded, Accomodation, Personal_Email, Insurance, ECName, ECNumber, Mob, Marital, Transport, Distance, Pickup, Address, City_Pin, Native_District, Native_State, Type_of_Asset, CPU_Laptop, Docking_Station, Monitor_1, Monitor_2, Desk_No, Dual_Moniter_SetUp, Internet_availability, Head_Phone_availability, Additional_Key_Board, Mouse, UPS, Proper_Table_availability, Proper_Chair_availability, Spike_Buster) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a1,b1,c1,d1,e1,f1,g1,h1,i1,j1,k1,l1,m1,n1,o1,p1,q1,r1,s1,t1,u1,v1,w1,x1,y1,z1,a2))  
                 print("executed successfully")  
                 con.commit()  
                 print("Customer successfully Added")  
                 
-                cur.execute("select * from Details")  
+                cur.execute("select * from Data")  
                 rows = cur.fetchall()
                 print(rows)  
         except Exception as e:   
