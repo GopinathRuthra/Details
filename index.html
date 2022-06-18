@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Employee and Asset Database Details</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"  />
   </head>
   <body>
     <h1>Employee and Asset Database Details</h1>
@@ -72,7 +72,6 @@
               <select class="form-input" id="Job_Role" name="Job_Role">
                 <option value="Production">Production </option>
                 <option value="Support">Support </option>
-                <option value="SPOC">SPOC </option>
                 <option value="Trainee">Trainee </option>
               </select>
             </div>
@@ -83,11 +82,8 @@
         </div>
         <div class="horizontal-group">
             <div class="form-group left" >
-              <label class="label-title">You are SPOC : *</label>
-              <select class="form-input" id="SPOC" name="SPOC">
-                <option value="Yes">Yes </option>
-                <option value="No">No </option>
-              </select>
+              <label for="SPOC Name " class="label-title">SPOC Name : *</label>
+              <input type="text" id="SPOC" name="SPOC" class="form-input" placeholder="Enter your SPOC's Name"/>
             </div>
             <div class="form-group right">
                 <label for="Core Process" class="label-title">Core Process : *</label>
@@ -112,18 +108,24 @@
 					<ul>
 						<li>
 							<label class="radio_wrap">
-								<input type="radio" name="gender" id="GENDER" value="male" class="input_radio" checked>
+								<input type="radio" name="GENDER" value="Male" class="input_radio" checked>
 								<span>Male</span>
 							</label>
 						</li>
 						<li>
 							<label class="radio_wrap">
-								<input type="radio" name="gender" id="GENDER" value="female" class="input_radio">
+								<input type="radio" name="GENDER" value="Female" class="input_radio">
 								<span>Female</span>
 							</label>
 						</li>
+            <li>
+							<label class="radio_wrap">
+								<input type="radio" name="GENDER" value="Not Preferred to say" class="input_radio">
+								<span>Not Preferred to say</span>
+							</label>
+						</li>
 					</ul>
-            </div>
+          </div>
             <div class="form-group right">
                 <label for="Date Of Birth">Date Of Birth :</label>
                 <input type="date" id="DOB" name="DOB" required="required" />
@@ -143,21 +145,29 @@
 
         <div class="horizontal-group">
             <div class="form-group left" >
-                <label for="Previous Team" class="label-title">Previous Team : *</label>
-                <input type="text" id="P_Team" name="P_Team" class="form-input" placeholder="Enter your Previous Team" required="required" />
+              <label class="label-title">Previous Team : *</label>
+              <select class="form-input" id="P_Team" name="P_Team">
+                <option value="Fresher">Fresher</option>
+                <option value="EPS">EPS</option>
+                <option value="HSD">HSD</option>
+                <option value="Safe Escrow">Safe Escrow</option>
+                <option value="Agency Third Party">HSD</option>
+                <option value="Other's">Others</option>
+              </select>
             </div>
             <div class="form-group right"> 
                 <label class="label-title">Vaccine Action Plan : *</label>
                     <select class="form-input" id="Vaccine_Action_Plan" name="Vaccine_Action_Plan">
-                      <option value="Provided by FAI">Provided by FAI </option>
+                      <option value="FAI Offered">FAI Offered</option>
                       <option value="Self">Self </option>
                     </select>
             </div>
             <div class="form-group left" >
                 <label class="label-title">Vaccinated Status : *</label>
                     <select class="form-input" id="Vaccinated_Status" name="Vaccinated_Status">
-                      <option value="Yes">Doseage 1 </option>
-                      <option value="No">Doseage 2 </option>
+                      <option value="Doseage 1">Doseage 1 </option>
+                      <option value="Doseage 2">Doseage 2 </option>
+                      <option value="Not Vaccinated">Not Vaccinated</option>
                     </select>
             </div>
             <div class="form-group right"> 
@@ -174,6 +184,8 @@
                 <label class="label-title">Accomodation : *</label>
                     <select class="form-input" id="Accomodation" name="Accomodation">
                       <option value="Stay with Family">Family </option>
+                      <option value="PG">PG </option>
+                      <option value="Rented House">Rented House</option>
                       <option value="Provided by Office">Provided by Office </option>
                     </select>
             </div>
@@ -229,8 +241,8 @@
 					<ul>
 						<li>
 							<label class="radio_wrap">
-								<input type="radio" name="Transport" value="Self" class="input_radio" checked>
-								<span>Own Transport</span>
+								<input type="radio" name="Transport" value="Own Vehicle" class="input_radio" checked>
+								<span>Own Vehicle</span>
 							</label>
 						</li>
 						<li>
@@ -246,7 +258,7 @@
 							</label>
 						</li>
 					</ul>
-            </div>
+          </div>
 
         <div class="horizontal-group">
             <div class="form-group left" >
@@ -410,8 +422,9 @@
           <div class="form-group left" >
             <label class="label-title">UPS for the backup in case of power outage : *</label>
             <select class="form-input" id="UPS" name="UPS">
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
+              <option value="Personal UPS">Personal UPS</option>
+              <option value="Company Provided">Company Provided</option>
+              <option value="No UPS">No UPS</option>
             </select>
           </div>
           <div class="form-group right">
