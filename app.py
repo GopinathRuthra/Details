@@ -26,6 +26,8 @@ def index():
         k=request.form.get('AGM_VP')
         l=request.form.get('Job_Role')
         m=request.form.get('T_Name')
+        if not m:
+            m = "Not Applicable"
         n=request.form.get('SPOC')
         o=request.form.get('Core_Process')
         p=request.form.get('Sub_Process')
