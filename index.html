@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Employee and Asset Database Details</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"  />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}"  />
     <!-- <script src="{{url_for('static', filename='index.js')}}"></script> -->
     <script src="../static/index.js"></script>
   </head>
@@ -34,79 +34,79 @@
             </div>
           </div>
         <div class="horizontal-group">
-            <div class="form-group right">
+            <div class="form-group left">
               <label for="Cost center ID" class="label-title">Cost center ID : *</label>
               <input type="text" id="CCID" name="CCID" class="form-input" placeholder="Enter a Cost center ID" required="required" />
             </div>
           </div>
         <div class="horizontal-group">
-            <div class="form-group left">
-                <label for="Date Of Joining">Date Of Joining :</label>
-                <input type="date" id="DOJ" name="DOJ" required="required" />
-            </div>
             <div class="form-group right">
-                <label for="email">Enter your Work Email:</label>
-                <input type="email" id="W_Email" name="W_Email" required="required" />
+                <label for="Date Of Joining" class="label-title">Date Of Joining :</label>
+                <input type="date" id="DOJ" name="DOJ" class="form-input" required="required" />
+            </div>
+            <div class="form-group left">
+                <label for="email" class="label-title">Enter your Work Email: *</label>
+                <input type="email" id="W_Email" name="W_Email" class="form-input" required="required" />
             </div>
         </div>
         <div class="horizontal-group">
-            <div class="form-group left">
+            <div class="form-group right">
               <label for="Manager" class="label-title">Manager : *</label>
               <input type="text" id="Manager" name="Manager" class="form-input" placeholder="Enter your Manager Name" required="required" />
             </div>
-            <div class="form-group right">
-                <label for="Band change date">Band change date :</label>
-                <input type="date" id="Band_Change_date" name="Band_Change_Date" required="required" />
+            <div class="form-group left">
+                <label for="Band change date" class="label-title">Band change date :</label>
+                <input type="date" id="Band_Change_date" name="Band_Change_Date" class="form-input" required="required" />
             </div>
         </div>
         <div class="horizontal-group">
-            <div class="form-group left">
+            <div class="form-group right">
               <label for="Lead" class="label-title">Lead : *</label>
               <input type="text" id="Lead" name="Lead" class="form-input" placeholder="Enter your Lead Name" required="required" />
             </div>
-            <div class="form-group right">
+            <div class="form-group left">
                 <label for="AGM / VP" class="label-title">AGM / VP Name : *</label>
                 <input type="text" id="AGM_VP" name="AGM_VP" class="form-input" placeholder="Enter your AGM / VP Name " required="required" />
             </div>
         <div class="horizontal-group">
-            <div class="form-group left" >
+            <div class="form-group right" >
               <label class="label-title">Job Role : *</label>
-              <select class="form-input" id="Job_Role" name="Job_Role" onchange="showMe(this)">
+              <select class="form-input" id="Job_Role" name="Job_Role" class="form-input" onchange="showMe(this)">
                 <option value="Production">Production </option>
                 <option value="Support">Support </option>
                 <option value="Trainee">Trainee </option>
               </select>
             </div>
-            <div id="test_div" class="form-group right" style="display: none">
+            <div id="test_div" class="form-group left" style="display: none">
                 <label for="Trainer's Name " class="label-title">Trainer's Name : *</label>
                 <input type="text" id="T_Name" name="T_Name" class="form-input" placeholder="Enter your Trainer's Name"/>
             </div>
         </div>
         <div class="horizontal-group">
-            <div class="form-group left" >
+            <div class="form-group right" >
               <label for="SPOC Name " class="label-title">SPOC Name : *</label>
               <input type="text" id="SPOC" name="SPOC" class="form-input" placeholder="Enter your SPOC's Name"/>
             </div>
-            <div class="form-group right">
+            <div class="form-group left">
                 <label for="Core Process" class="label-title">Core Process : *</label>
                 <input type="text" id="Core_Processe" name="Core_Process" class="form-input" placeholder="Enter your Core Process" required="required" />
             </div>
         </div>
 
         <div class="horizontal-group">
-            <div class="form-group left" >
+            <div class="form-group right" >
                 <label for="Sub Process" class="label-title">Sub Process : *</label>
                 <input type="text" id="Sub Processe" name="Sub_Process" class="form-input" placeholder="Enter your Sub Process" required="required" />
             </div>
-            <div class="form-group right">
+            <div class="form-group left">
                 <label for="Higher_Qualification" class="label-title">Higher Qualification : *</label>
                 <input type="text" id="Higher_Qualification" name="Higher_Qualification" class="form-input" placeholder="Enter your Higher Qualification" required="required" />
             </div>
         </div>
 
         <div class="horizontal-group">
-            <div class="form-group left" >
-                <label>Gender</label>
+            <div class="form-group right" >
+                <label for="Gender" class="label-title">Gender</label>
 					<ul>
 						<li>
 							<label class="radio_wrap">
@@ -128,16 +128,16 @@
 						</li>
 					</ul>
           </div>
-            <div class="form-group right">
-                <label for="Date Of Birth">Date Of Birth :</label>
-                <input type="date" id="DOB" name="DOB" required="required" />
+            <div class="form-group left">
+                <label for="Date Of Birth" class="label-title">Date Of Birth :</label>
+                <input type="date" id="DOB" name="DOB" class="form-input" required="required" />
             </div>
         </div>
 
         <div class="horizontal-group">
-            <div class="form-group left" >
+            <div class="form-group right" >
                 <label class="label-title">Work Location : *</label>
-                    <select class="form-input" id="Work_Location" name="Work_Location">
+                    <select class="form-input" id="Work_Location" name="Work_Location" class="form-input">
                       <option value="Base">WFH-Base Location </option>
                       <option value="Non Base">WFH-Non Base Location </option>
                       <option value="RTO">RTO</option>
@@ -192,8 +192,8 @@
                     </select>
             </div>
             <div class="form-group right">
-                <label for="email">Enter your Personal Email:</label>
-                <input type="email" id="Personal_Email" name="Personal_Email" required="required" />
+                <label for="email" class="label-title">Enter your Personal Email:</label>
+                <input type="email" id="Personal_Email" name="Personal_Email" class="form-input" required="required" />
             </div>
         </div>
         <div class="horizontal-group">
@@ -222,7 +222,7 @@
         </div>
         <div class="horizontal-group">
             <div class="form-group left" >
-                <label>Marital Status</label>
+                <label for="Marital" class="label-title">Marital Status</label>
 					<ul>
 						<li>
 							<label class="radio_wrap">
@@ -239,7 +239,7 @@
 					</ul>
             </div>
             <div class="form-group right">
-                <label>Mode of Transport</label>
+                <label for="Transport" class="label-title">Mode of Transport</label>
 					<ul>
 						<li>
 							<label class="radio_wrap">
@@ -269,14 +269,14 @@
             </div>
             <div class="form-group right">
                 <label for="Pickup Point" class="label-title">Pickup Point : *</label>
-                <input type="text" id="Pickup" name="Pickup" class="form-input" placeholder="Enter you Pickup Point" required="required" />
+                <input type="text" id="Pickup" name="Pickup" class="form-input" placeholder="Enter your Pickup Point" required="required" />
             </div>
         </div>
 
         <div class="horizontal-group">
             <div class="form-group left" >
-                <label for="Address">Residential Address:</label>
-                <textarea id="Address" name="Address" rows="4" cols="50"></textarea>
+                <label for="Address" class="label-title">Residential Address:</label>
+                <textarea id="Address" name="Address" rows="4" cols="50" class="form-input" placeholder="Enter your Residential Address"></textarea>
             </div>
             <div class="form-group right">
                 <label for="City - Pin" class="label-title">City - Pin : *</label>
@@ -285,7 +285,7 @@
         </div>
         
         <div class="horizontal-group">
-            <div class="form-group right">
+            <div class="form-group left">
               <label class="label-title">Native State : *</label>
               <select class="form-input" id="Native_State" name="Native_State">
                 <option value="AN">Andaman and Nicobar Islands</option>
@@ -333,14 +333,14 @@
             </div>
         </div>
         </div>
-
-        
+        <br></br> <br></br> 
+    <br></br>   
     <h2> Asset Details</h2>
-
+    <br></br> 
         <div class="horizontal-group">
           <div class="form-group left" >
             <label class="label-title">Type of Asset : *</label>
-            <select class="form-input" id="Type_of_Asset" name="Type_of_Asset">
+            <select class="form-input" id="Type_of_Asset" name="Type_of_Asset" onchange="showUs(this)">
               <option value="Company Desktop">Company Desktop </option>
               <option value="Company Laptop">Company Laptop </option>
               <option value="Rental Laptop">Rental Laptop </option>
@@ -349,33 +349,33 @@
               <option value="No Asset Allocated">No Asset Allocated </option>
             </select>
           </div>
-          <div class="form-group right">
+          <div id=test_all class="form-group right" style="display: none">
             <label for="CPU/ Laptop (Serial No.)" class="label-title">CPU/ Laptop (Serial No.) : *</label>
             <input type="text" id="CPU_Laptop" name="CPU_Laptop" class="form-input" placeholder="Enter your CPU/ Laptop (Serial No.)" required="required" />
           </div>
         </div>
 
         <div class="horizontal-group">
-          <div class="form-group left" >
+          <div id=test_all class="form-group left" style="display: none">
             <label for="Docking Station (Serial No.)" class="label-title">Docking Station (Serial No.) : *</label>
             <input type="text" id="Docking_Station" name="Docking_Station" class="form-input" placeholder="Enter your Docking Station (Serial No.)" required="required" />
           </div>
-          <div class="form-group right">
+          <div id=test_all class="form-group right" style="display: none">
             <label for="Monitor 1 (Serial No.)" class="label-title">Monitor 1 (Serial No.) : *</label>
             <input type="text" id="Monitor_1" name="Monitor_1" class="form-input" placeholder="Enter your Monitor 1 (Serial No.)" required="required" />
           </div>
-          <div class="form-group left" >
+          <div id=test_all class="form-group left" style="display: none">
             <label for="Monitor 2 (Serial No.)" class="label-title">Monitor 2 (Serial No.) : *</label>
             <input type="text" id="Monitor_2" name="Monitor_2" class="form-input" placeholder="Enter your Monitor 2 (Serial No.)" required="required" />
           </div>
         </div>
 
         <div class="horizontal-group">
-          <div class="form-group left" >
+          <div id=test_all class="form-group right" style="display: none">
             <label for="Desk#" class="label-title">Desk Number : *</label>
             <input type="text" id="Desk_No" name="Desk_No" class="form-input" placeholder="Enter your Desk#" required="required" />
           </div>
-          <div class="form-group right">
+          <div id=test_all class="form-group left" style="display: none">
             <label class="label-title">Dual Moniter SetUp : *</label>
             <select class="form-input" id="Dual_Moniter_SetUp" name="Dual_Moniter_SetUp">
               <option value="Yes">Yes</option>
@@ -385,7 +385,7 @@
         </div>
 
         <div class="horizontal-group">
-          <div class="form-group left" >
+          <div id=test_all class="form-group right" style="display: none" >
             <label class="label-title">Internet availability : *</label>
             <select class="form-input" id="Internet_availability" name="Internet_availability">
               <option value="Dongle">Dongle </option>
@@ -394,7 +394,7 @@
               <option value=" Mobile HotSpot"> Mobile HotSpot </option>
             </select>
           </div>
-          <div class="form-group right">
+          <div id=test_all class="form-group left" style="display: none">
             <label class="label-title">Head Phone availability : *</label>
             <select class="form-input" id="Head_Phone_availability" name="Head_Phone_availability">
               <option value="Company Provided">Company Provided </option>
@@ -404,15 +404,15 @@
         </div>
 
         <div class="horizontal-group">
-          <div class="form-group left" >
+          <div id=test_all class="form-group right" style="display: none">
             <label class="label-title">Additional Key Board  : *</label>
             <select class="form-input" id="Additional_Key_Board" name="Additional_Key_Board">
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
           </div>
-          <div class="form-group right">
-            <label class="label-title">Mouse  : *</label>
+          <div class="form-group left" style="display: none">
+            <label id=test_all class="label-title">Mouse  : *</label>
             <select class="form-input" id="Mouse" name="Mouse">
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -421,7 +421,7 @@
         </div>
 
         <div class="horizontal-group">
-          <div class="form-group left" >
+          <div id=test_all class="form-group right" style="display: none">
             <label class="label-title">UPS for the backup in case of power outage : *</label>
             <select class="form-input" id="UPS" name="UPS">
               <option value="Personal UPS">Personal UPS</option>
@@ -429,7 +429,7 @@
               <option value="No UPS">No UPS</option>
             </select>
           </div>
-          <div class="form-group right">
+          <div id=test_all class="form-group left" style="display: none">
               <label class="label-title">Proper Table availability  : *</label>
               <select class="form-input" id="Proper_Table_availability" name="Proper_Table_availability">
                 <option value="Yes">Yes</option>
@@ -439,14 +439,14 @@
         </div>
 
         <div class="horizontal-group">
-          <div class="form-group left" >
+          <div id=test_all class="form-group right" style="display: none">
             <label class="label-title">Proper Chair availability : *</label>
             <select class="form-input" id="Proper_Chair_availability " name="Proper_Chair_availability">
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
           </div>
-          <div class="form-group right">
+          <div id=test_all class="form-group left" style="display: none">
               <label class="label-title">Spike Buster : *</label>
               <select class="form-input" id="Spike_Buster" name="Spike_Buster">
                 <option value="Yes">Yes</option>
@@ -457,6 +457,7 @@
       <div class="form-footer">
         <span>* Required</span>
         <button type="submit" class="btn">Update</button>
+        <input type="reset" class="btn"value="Reset">
       </div>
     </form>
   </body>
@@ -472,6 +473,18 @@
       } else {
         e.style.display = "none";
         document.getElementById("T_Name").removeAttribute("required");
+      }
+    }
+
+    function showUs(ea) {
+      var strdisplay = ea.options[ea.selectedIndex].value;
+       var ea = document.getElementById("test_all");
+      if(strdisplay == "No Asset Allocated") {
+        ea.style.display = "block";
+        document.getElementById("Type_of_Asset").setAttribute("required","true");
+      } else {
+        ea.style.display = "none";
+        document.getElementById("Type_of_Asset").removeAttribute("required");
       }
     }
   </script>    
