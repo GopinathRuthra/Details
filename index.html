@@ -349,33 +349,33 @@
               <option value="No Asset Allocated">No Asset Allocated </option>
             </select>
           </div>
-          <div id=test_all class="form-group right" style="display: none">
+          <div id=CPU_Laptop_div class="form-group right" style="display: block">
             <label for="CPU/ Laptop (Serial No.)" class="label-title">CPU/ Laptop (Serial No.) : *</label>
             <input type="text" id="CPU_Laptop" name="CPU_Laptop" class="form-input" placeholder="Enter your CPU/ Laptop (Serial No.)" required="required" />
           </div>
         </div>
 
         <div class="horizontal-group">
-          <div id=test_all class="form-group left" style="display: none">
+          <div id=Docking_Station_dev class="form-group left" style="display: block">
             <label for="Docking Station (Serial No.)" class="label-title">Docking Station (Serial No.) : *</label>
             <input type="text" id="Docking_Station" name="Docking_Station" class="form-input" placeholder="Enter your Docking Station (Serial No.)" required="required" />
           </div>
-          <div id=test_all class="form-group right" style="display: none">
+          <div id=Monitor_1_div class="form-group right" style="display: block">
             <label for="Monitor 1 (Serial No.)" class="label-title">Monitor 1 (Serial No.) : *</label>
             <input type="text" id="Monitor_1" name="Monitor_1" class="form-input" placeholder="Enter your Monitor 1 (Serial No.)" required="required" />
           </div>
-          <div id=test_all class="form-group left" style="display: none">
+          <div id=Monitor_2_div class="form-group left" style="display: block">
             <label for="Monitor 2 (Serial No.)" class="label-title">Monitor 2 (Serial No.) : *</label>
             <input type="text" id="Monitor_2" name="Monitor_2" class="form-input" placeholder="Enter your Monitor 2 (Serial No.)" required="required" />
           </div>
         </div>
 
         <div class="horizontal-group">
-          <div id=test_all class="form-group right" style="display: none">
+          <div id=Desk_No_div class="form-group right" style="display: block">
             <label for="Desk#" class="label-title">Desk Number : *</label>
             <input type="text" id="Desk_No" name="Desk_No" class="form-input" placeholder="Enter your Desk#" required="required" />
           </div>
-          <div id=test_all class="form-group left" style="display: none">
+          <div id=Dual_Moniter_SetUp_div class="form-group left" style="display: block">
             <label class="label-title">Dual Moniter SetUp : *</label>
             <select class="form-input" id="Dual_Moniter_SetUp" name="Dual_Moniter_SetUp">
               <option value="Yes">Yes</option>
@@ -385,7 +385,7 @@
         </div>
 
         <div class="horizontal-group">
-          <div id=test_all class="form-group right" style="display: none" >
+          <div id=Internet_availability_div class="form-group right" style="display: block" >
             <label class="label-title">Internet availability : *</label>
             <select class="form-input" id="Internet_availability" name="Internet_availability">
               <option value="Dongle">Dongle </option>
@@ -394,7 +394,7 @@
               <option value=" Mobile HotSpot"> Mobile HotSpot </option>
             </select>
           </div>
-          <div id=test_all class="form-group left" style="display: none">
+          <div id=Head_Phone_availability_div class="form-group left" style="display: block">
             <label class="label-title">Head Phone availability : *</label>
             <select class="form-input" id="Head_Phone_availability" name="Head_Phone_availability">
               <option value="Company Provided">Company Provided </option>
@@ -404,15 +404,15 @@
         </div>
 
         <div class="horizontal-group">
-          <div id=test_all class="form-group right" style="display: none">
+          <div id=Additional_Key_Board_div class="form-group right" style="display: block">
             <label class="label-title">Additional Key Board  : *</label>
             <select class="form-input" id="Additional_Key_Board" name="Additional_Key_Board">
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
           </div>
-          <div class="form-group left" style="display: none">
-            <label id=test_all class="label-title">Mouse  : *</label>
+          <div class="form-group left" id=Mouse_div style="display: block">
+            <label  class="label-title">Mouse  : *</label>
             <select class="form-input" id="Mouse" name="Mouse">
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -421,7 +421,7 @@
         </div>
 
         <div class="horizontal-group">
-          <div id=test_all class="form-group right" style="display: none">
+          <div id=UPS_div class="form-group right" style="display: block">
             <label class="label-title">UPS for the backup in case of power outage : *</label>
             <select class="form-input" id="UPS" name="UPS">
               <option value="Personal UPS">Personal UPS</option>
@@ -429,7 +429,7 @@
               <option value="No UPS">No UPS</option>
             </select>
           </div>
-          <div id=test_all class="form-group left" style="display: none">
+          <div id=Proper_Table_availability_div class="form-group left" style="display: block">
               <label class="label-title">Proper Table availability  : *</label>
               <select class="form-input" id="Proper_Table_availability" name="Proper_Table_availability">
                 <option value="Yes">Yes</option>
@@ -439,14 +439,14 @@
         </div>
 
         <div class="horizontal-group">
-          <div id=test_all class="form-group right" style="display: none">
+          <div id=Proper_Chair_availability_div class="form-group right" style="display: block">
             <label class="label-title">Proper Chair availability : *</label>
             <select class="form-input" id="Proper_Chair_availability " name="Proper_Chair_availability">
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
           </div>
-          <div id=test_all class="form-group left" style="display: none">
+          <div id=Spike_Buster_div class="form-group left" style="display: none">
               <label class="label-title">Spike Buster : *</label>
               <select class="form-input" id="Spike_Buster" name="Spike_Buster">
                 <option value="Yes">Yes</option>
@@ -478,13 +478,19 @@
 
     function showUs(ea) {
       var strdisplay = ea.options[ea.selectedIndex].value;
-       var ea = document.getElementById("test_all");
+       var Mouse_div = document.getElementById("Mouse_div");
+       var Additional_Key_Board_div = document.getElementById("Additional_Key_Board_div");
       if(strdisplay == "No Asset Allocated") {
         ea.style.display = "block";
-        document.getElementById("Type_of_Asset").setAttribute("required","true");
-      } else {
-        ea.style.display = "none";
+        Mouse_div.style.display = "none";
+        Additional_Key_Board_div.style.display = "none";
+      } else if (strdisplay == "Company Laptop" || strdisplay == "Rental Laptop"){
+        Mouse_div.style.display = "none";
+        Additional_Key_Board_div.style.display = "none";
         document.getElementById("Type_of_Asset").removeAttribute("required");
+      }else{
+        Mouse_div.style.display = "block";
+        Additional_Key_Board_div.style.display = "block";
       }
     }
   </script>    
