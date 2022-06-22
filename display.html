@@ -1,36 +1,51 @@
 <html>
     <head>
         <style>
-        table {
-          font-family: arial, sans-serif;
-          border-collapse: collapse;
-          width: 100%;
-          height: 10%;
-        }
-        
-        td, th {
-          border: 1px solid #080000;
-          text-align: left;
-          padding : 8px;
-        }
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
 
-        th {
-            text-align: center;
-        }
-        
-        tr:nth-child(even) {
-          background-color: #dddddd;
-        }
-      
-        body {
-            background-image: url("Disp_image.jpg");
-        }
-        </style>
-        <title>Employee and Asset Database</title>
-        </head>
-        <h1> Employee and Asset Database Details </h1>
+.styled-table thead tr {
+    background-color: #40bffa;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #a8e5fd;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #40bffa;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: normal;
+    color: #01151f;
+}
+
+body{
+            background-image:url('../static/images/Disp_image.jpg')
+        } 
+</style>
+<h1> Employee and Asset Database Details </h1>
 <body onload="setData()">
-    <table>
+<table class="styled-table">
+    <thead>
         <caption>Employee and Asset Database Details</caption>
         <thead>  
             <th>Global ID</th>  
@@ -90,7 +105,7 @@
           
         {% for row in rows %}  
           
-            <tr>    
+            <tr class="active-row">    
                 <td>{{row[1]}}</td>  
                 <td>{{row[2]}}</td>  
                 <td>{{row[3]}}</td>
@@ -145,8 +160,12 @@
                 <td>{{row[52]}}</td>  
                 <td>{{row[53]}}</td>
             </tr>  
-          
-        {% endfor %}  
-    </table>
+
+            {% endfor %}   
+    </thead>
+    <tbody>
+        <tr>
+    </tbody>
+</table>
 </body>
 </html>
