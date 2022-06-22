@@ -1,13 +1,82 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  background-image:url('../static/images/Front_image.jpg')
+}
+ 
+.wrapper{
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.registration_form{
+	background: #f9fafa;
+	padding: 30px;
+	border-radius: 5px;
+	width: 800px;
+}
+
+.registration_form .title{
+	text-align: center;
+	font-size: 22px;
+	text-transform: uppercase;
+	color: #000000;
+	letter-spacing: 5px;
+	font-weight: 700;
+}
+
+.form_wrap{
+	margin-top: 35px;
+  text-align: center;
+}
+
+.btn {
+    float:left;
+   width:49%;
+   padding:10px 20px;
+   background-color: #4bdbff;
+   font-size:17px;
+   border:none;
+   border-radius:5px;
+   color:#000000;
+   cursor:pointer;
+}
+
+.btn:hover {
+  background-color: #f4f7f6;
+  color:rgb(0, 0, 0);
+}
+    </style>
     <meta charset="utf-8">
     <title>Employee and Asset Database Details</title>
   </head>
+  
     <body>
-        <h2>Welcome to Employee and Asset Database Details</h2>
-        <a href="{{ url_for('index') }}"> Add the Employee & Asset Details </a><br></br>
-        <a href="{{ url_for('view') }}"> View the Employee & Asset Details </a><br></br>
-        <a href="{{ url_for('delete') }}"> Delete the Employee & Asset Details </a>
+        <div class="wrapper">
+          <div class="registration_form">
+            <div class="title">Employee and Asset Database Details</div><br></br>
+            <form id="form"> 
+              <a href="{{ url_for('index') }}"> Add the Employee & Asset Details </a><br></br>
+              <a href="{{ url_for('display') }}"> View the Employee & Asset Details </a><br></br>
+              <a href="{{ url_for('delete') }}"> Delete the Employee & Asset Details </a>
+      	    </form>
+            </div>
+          </div>
+        </div>
     </body>
 </html>
