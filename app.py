@@ -1,4 +1,5 @@
-from flask import Flask, render_template,redirect,url_for, request
+from unittest import result
+from flask import Flask, render_template,redirect,url_for, request , jsonify
 import sqlite3
 
 app=Flask(__name__)
@@ -11,7 +12,7 @@ def homepage():
 def index():
     return render_template("index.html")
 
-@app.route('/display')
+@app.route('/view')
 def view():
     con = sqlite3.connect("Asset.db")
     cur = con.cursor()  
@@ -41,26 +42,12 @@ def display():
         a=request.form.get('GID')
         b=request.form.get('Emp_Name')
         c=request.form.get('Band')
-        if not c:
-            c = "-"
         d=request.form.get('CCName')
-        if not d:
-            d = "-"
         e=request.form.get('CCID')
-        if not e:
-            e = "-"
         f=request.form.get('DOJ')
-        if not f:
-            f = "-"
         g=request.form.get('W_Email')
-        if not g:
-            g = "-"
         h=request.form.get('Manager')
-        if not h:
-            h = "-"
         i=request.form.get('Band_Change_Date')
-        if not i:
-            i = "-"
         j=request.form.get('Lead')
         k=request.form.get('AGM_VP')
         l=request.form.get('Job_Role')
@@ -78,8 +65,6 @@ def display():
         v=request.form.get('Vaccine_Action_Plan')
         w=request.form.get('Vaccinated_Status')
         x=request.form.get('Vaccination_Certificate_Uploaded')
-        if not x:
-            x = "-"
         y=request.form.get('Accomodation')
         z=request.form.get('Personal_Email')
         a1=request.form.get('Insurance')
@@ -90,37 +75,21 @@ def display():
         f1=request.form.get('Transport')
         g1=request.form.get('Distance')
         h1=request.form.get('Pickup')
-        if not h1:
-            h1 = "-"
         i1=request.form.get('Address')
         j1=request.form.get('City_Pin')        
         k1=request.form.get('Native_State')
         l1=request.form.get('Native_District')
         m1=request.form.get('Type_of_Asset')
         n1=request.form.get('CPU_Laptop')
-        if not n1:
-            n1 = "Not Applicable"
         o1=request.form.get('Docking_Station')
-        if not o1:
-            o1 = "Not Applicable"
         p1=request.form.get('Monitor_1')
-        if not p1:
-            p1 = "Not Applicable"
         q1=request.form.get('Monitor_2')
-        if not q1:
-            q1 = "Not Applicable"
         r1=request.form.get('Desk_No')
-        if not r1:
-            r1 = "Not Applicable"
         s1=request.form.get('Dual_Moniter_SetUp')
         t1=request.form.get('Internet_availability')
         u1=request.form.get('Head_Phone_availability')
         v1=request.form.get('Additional_Key_Board')
-        if not v1:
-            v1 = "Not Applicable"
         w1=request.form.get('Mouse')
-        if not w1:
-            w1 = "Not Applicable"
         x1=request.form.get('UPS')
         y1=request.form.get('Proper_Table_availability')
         z1=request.form.get('Proper_Chair_availability')
@@ -136,6 +105,9 @@ def display():
                 con.commit()  
                 print("Customer successfully Added")  
                 
+                # cur.execute("select * from Data")  
+                # rows = cur.fetchall()
+                # print(rows)  
         except Exception as e:   
             con.rollback()
             print(e)  
@@ -144,5 +116,13 @@ def display():
             con.close()
             return redirect(url_for('view')) 
 
-    if __name__=='__main__':
-        app.run(debug=True)
+@app.route('/test/<gid>', methods=['GET'])
+def testfn(gid):
+    con = sqlite3.connect("Asset.db")
+    cur = con.cursor()  
+    cur.execute("select * from Data where GID = ?",[gid])  
+    rows = cur.fetchall()
+    return jsonify(rows)  # serialize and use JSON headers
+
+if __name__=='__main__':
+    app.run(debug=True)
