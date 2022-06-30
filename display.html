@@ -1,53 +1,53 @@
 <html>
-    <head>
-        <style>
-.styled-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.styled-table thead tr {
-    background-color: #40bffa;
-    color: #ffffff;
-    text-align: left;
-}
-
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
-
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #a8e5fd;
-}
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #40bffa;
-}
-
-.styled-table tbody tr.active-row {
-    font-weight: normal;
-    color: #01151f;
-}
-
-body{
-            background-image:url('../static/images/Disp_image.jpg')
-        } 
-</style>
-<h1> Employee and Asset Database Details </h1>
-<body onload="setData()">
-<table class="styled-table">
-    <thead>
-        <caption>Employee and Asset Database Details</caption>
-        <thead>  
+<head>
+    <title>Employee and Asset Database Details</title>
+    <h2>Employee and Asset Database Details</h2>
+      <meta name="viewport" content="width=device-width">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+          <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+          <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>  
+          <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/js/bootstrap-editable.js"></script>
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <style>
+        #tblStocks {
+          font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+ 
+        #tblStocks td, #tblStocks th {
+          border: 1px solid #ddd;
+          padding: 10px 25px;
+          white-space: nowrap;
+          text-align: center;
+        }
+ 
+        #tblStocks tr:nth-child(even){background-color: #f2f2f2;}
+ 
+        #tblStocks tr:hover {background-color: #ddd;}
+ 
+        #tblStocks th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #294c67;;
+            color: white;
+          }
+      </style>
+</head>
+<body>
+  <button onclick="exportData()">
+    <span class="glyphicon glyphicon-download"></span>
+    Export into Excel </button><br></br>
+        <table id="tblStocks" cellpadding="0" cellspacing="0">
+          <tr>
+            <th>S.No</th>
             <th>Global ID</th>  
             <th>Name </th>  
             <th>Band </th>  
@@ -61,13 +61,13 @@ body{
             <th>AGM / VP Name</th>  
             <th>Job Role </th>  
             <th>Trainer's Name </th>  
-            <th>You are SPOC</th>  
+            <th>SPOC Name</th>  
             <th>Core Process</th>  
             <th>Sub Process</th>  
             <th>Higher Qualification</th>  
             <th>Gender </th>  
             <th>Date Of Birth</th>  
-            <th>SEGMENT</th>   
+            <th>Work Location</th>   
             <th>Previous Team </th>  
             <th>Vaccine Action Plan </th>  
             <th>Vaccinated Status</th>  
@@ -77,7 +77,7 @@ body{
             <th>Insurance Type</th>  
             <th>Emergency Contact Name</th>  
             <th>Emergency Contact Number </th>  
-            <th>Contact Name</th>  
+            <th>Personal Contact Number</th>  
             <th>Marital Status</th>  
             <th>Mode of Transport</th>  
             <th>Distance from Office</th>  
@@ -100,72 +100,267 @@ body{
             <th>UPS for the backup</th>  
             <th>Proper Table availability</th>  
             <th>Proper Chair availability</th>  
-            <th>Spike Buster</th>  
-        </thead>  
-          
-        {% for row in rows %}  
-          
-            <tr class="active-row">    
-                <td>{{row[1]}}</td>  
-                <td>{{row[2]}}</td>  
-                <td>{{row[3]}}</td>
-                <td>{{row[4]}}</td> 
-                <td>{{row[5]}}</td> 
-                <td>{{row[6]}}</td> 
-                <td>{{row[7]}}</td> 
-                <td>{{row[8]}}</td> 
-                <td>{{row[9]}}</td>
-                <td>{{row[10]}}</td> 
-                <td>{{row[11]}}</td>  
-                <td>{{row[12]}}</td>  
-                <td>{{row[13]}}</td>
-                <td>{{row[14]}}</td> 
-                <td>{{row[15]}}</td> 
-                <td>{{row[16]}}</td> 
-                <td>{{row[17]}}</td> 
-                <td>{{row[18]}}</td> 
-                <td>{{row[19]}}</td>
-                <td>{{row[20]}}</td>  
-                <td>{{row[21]}}</td>  
-                <td>{{row[22]}}</td>  
-                <td>{{row[23]}}</td>
-                <td>{{row[24]}}</td> 
-                <td>{{row[25]}}</td> 
-                <td>{{row[26]}}</td> 
-                <td>{{row[27]}}</td> 
-                <td>{{row[28]}}</td> 
-                <td>{{row[29]}}</td>
-                <td>{{row[30]}}</td>
-                <td>{{row[31]}}</td>  
-                <td>{{row[32]}}</td>  
-                <td>{{row[33]}}</td>
-                <td>{{row[34]}}</td> 
-                <td>{{row[35]}}</td> 
-                <td>{{row[36]}}</td> 
-                <td>{{row[37]}}</td> 
-                <td>{{row[38]}}</td> 
-                <td>{{row[39]}}</td>
-                <td>{{row[40]}}</td>
-                <td>{{row[41]}}</td>  
-                <td>{{row[42]}}</td>  
-                <td>{{row[43]}}</td>
-                <td>{{row[44]}}</td> 
-                <td>{{row[45]}}</td> 
-                <td>{{row[46]}}</td> 
-                <td>{{row[47]}}</td> 
-                <td>{{row[48]}}</td> 
-                <td>{{row[49]}}</td>
-                <td>{{row[50]}}</td>
-                <td>{{row[51]}}</td>  
-                <td>{{row[52]}}</td>  
-                <td>{{row[53]}}</td>
-            </tr>  
+            <th>Spike Buster</th>
+          </tr>
 
+        {% for row in rows %}  
+              <tr class="changes done">
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>  
+                <td data-name="Emp_Name" class="Emp_Name" data-type="text" data-pk="{{row.id}}">{{row[2]}}</td>  
+                <td contenteditable="true">{{row[3]}}</td>
+                <td contenteditable="true">{{row[4]}}</td> 
+                <td contenteditable="true">{{row[5]}}</td> 
+                <td contenteditable="true">{{row[6]}}</td> 
+                <td contenteditable="true">{{row[7]}}</td> 
+                <td contenteditable="true">{{row[8]}}</td> 
+                <td contenteditable="true">{{row[9]}}</td>
+                <td contenteditable="true">{{row[10]}}</td> 
+                <td contenteditable="true">{{row[11]}}</td>  
+                <td contenteditable="true">{{row[12]}}</td>  
+                <td contenteditable="true">{{row[13]}}</td>
+                <td contenteditable="true">{{row[14]}}</td> 
+                <td contenteditable="true">{{row[15]}}</td> 
+                <td contenteditable="true">{{row[16]}}</td> 
+                <td contenteditable="true">{{row[17]}}</td> 
+                <td contenteditable="true">{{row[18]}}</td> 
+                <td contenteditable="true">{{row[19]}}</td>
+                <td contenteditable="true">{{row[20]}}</td>  
+                <td contenteditable="true">{{row[21]}}</td>  
+                <td contenteditable="true">{{row[22]}}</td>  
+                <td contenteditable="true">{{row[23]}}</td>
+                <td contenteditable="true">{{row[24]}}</td> 
+                <td contenteditable="true">{{row[25]}}</td> 
+                <td contenteditable="true">{{row[26]}}</td> 
+                <td contenteditable="true">{{row[27]}}</td> 
+                <td contenteditable="true">{{row[28]}}</td> 
+                <td contenteditable="true">{{row[29]}}</td>
+                <td contenteditable="true">{{row[30]}}</td>
+                <td contenteditable="true">{{row[31]}}</td>  
+                <td contenteditable="true">{{row[32]}}</td>  
+                <td contenteditable="true">{{row[33]}}</td>
+                <td contenteditable="true">{{row[34]}}</td> 
+                <td contenteditable="true">{{row[35]}}</td> 
+                <td contenteditable="true">{{row[36]}}</td> 
+                <td contenteditable="true">{{row[37]}}</td> 
+                <td contenteditable="true">{{row[38]}}</td> 
+                <td contenteditable="true">{{row[39]}}</td>
+                <td contenteditable="true">{{row[40]}}</td>
+                <td contenteditable="true">{{row[41]}}</td>  
+                <td contenteditable="true">{{row[42]}}</td>  
+                <td contenteditable="true">{{row[43]}}</td>
+                <td contenteditable="true">{{row[44]}}</td> 
+                <td contenteditable="true">{{row[45]}}</td> 
+                <td contenteditable="true">{{row[46]}}</td> 
+                <td contenteditable="true">{{row[47]}}</td> 
+                <td contenteditable="true">{{row[48]}}</td> 
+                <td contenteditable="true">{{row[49]}}</td>
+                <td contenteditable="true">{{row[50]}}</td>
+                <td contenteditable="true">{{row[51]}}</td>  
+                <td contenteditable="true">{{row[52]}}</td>  
+                <td contenteditable="true">{{row[53]}}</td>
+              </tr>
+              <span class="changes done"></span>
             {% endfor %}   
-    </thead>
-    <tbody>
-        <tr>
-    </tbody>
-</table>
+        </table>
+        <br />
 </body>
+
+<script>
+function exportData(){
+    var table = document.getElementById("tblStocks");
+ 
+    var rows =[];
+ 
+    for(var i=0,row; row = table.rows[i];i++){
+
+        
+        column1 = row.cells[0].innerText;
+        column2 = row.cells[1].innerText;
+        column3 = row.cells[2].innerText;
+        column4 = row.cells[3].innerText;
+        column5 = row.cells[4].innerText;
+        column6 = row.cells[5].innerText;
+        column7 = row.cells[6].innerText;
+        column8 = row.cells[7].innerText;
+        column9 = row.cells[8].innerText;
+        column10 = row.cells[9].innerText;
+        column11 = row.cells[10].innerText;
+        column12 = row.cells[11].innerText;
+        column13 = row.cells[12].innerText;
+        column14 = row.cells[13].innerText;
+        column15 = row.cells[14].innerText;
+        column16 = row.cells[15].innerText;
+        column17 = row.cells[16].innerText;
+        column18 = row.cells[17].innerText;
+        column19 = row.cells[18].innerText;
+        column20 = row.cells[19].innerText;
+        column21 = row.cells[20].innerText;
+        column22 = row.cells[21].innerText;
+        column23 = row.cells[22].innerText;
+        column24 = row.cells[23].innerText;
+        column25 = row.cells[24].innerText;
+        column26 = row.cells[25].innerText;
+        column27 = row.cells[26].innerText;
+        column28 = row.cells[27].innerText;
+        column29 = row.cells[28].innerText;
+        column30 = row.cells[29].innerText;
+        column31 = row.cells[30].innerText;
+        column32 = row.cells[31].innerText;
+        column33 = row.cells[32].innerText;
+        column34 = row.cells[33].innerText;
+        column35 = row.cells[34].innerText;
+        column36 = row.cells[35].innerText;
+        column37 = row.cells[36].innerText;
+        column38 = row.cells[37].innerText;
+        column39 = row.cells[38].innerText;
+        column40 = row.cells[39].innerText;
+        column41 = row.cells[40].innerText;
+        column42 = row.cells[41].innerText;
+        column43 = row.cells[42].innerText;
+        column44 = row.cells[43].innerText;
+        column45 = row.cells[44].innerText;
+        column46 = row.cells[45].innerText;
+        column47 = row.cells[46].innerText;
+        column48 = row.cells[47].innerText;
+        column49 = row.cells[48].innerText;
+        column50 = row.cells[49].innerText;
+        column51 = row.cells[50].innerText;
+        column52 = row.cells[51].innerText;
+        column53 = row.cells[52].innerText;
+
+
+        rows.push(
+            [
+ 	 column1,
+	 column2,
+	 column3,
+	 column4,
+	 column5,
+	 column6,
+	 column7,
+	 column8,
+	 column9,
+	 column10,
+	 column11,
+	 column12,
+	 column13,
+	 column14,
+	 column15,
+	 column16,
+	 column17,
+	 column18,	
+	 column19,
+	 column20,
+	 column21,
+	 column22,	
+	 column23,
+	 column24,
+	 column25,
+	 column26,
+	 column27,
+	 column28,
+	 column29,
+	 column30,
+	 column31,
+	 column32,
+	 column33,
+	 column34,
+	 column35,
+	 column36,
+	 column37,
+	 column38,
+	 column39,
+	 column40,
+	 column41,
+	 column42,
+	 column43,
+	 column44,
+	 column45,
+	 column46,
+	 column47,
+	 column48,
+	 column49,
+	 column50,
+	 column51,
+	 column52,
+	 column53
+            ]
+        );
+ 
+        }
+        csvContent = "data:text/csv;charset=utf-8,";
+        rows.forEach(function(rowArray){
+            row = rowArray.join(",");
+            csvContent += row + "\r\n";
+        });
+ 
+        var encodedUri = encodeURI(csvContent);
+        var link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "Employee&Asset Database.csv");
+        document.body.appendChild(link);
+        link.click();
+}
+</script>
+<script type="text/javascript" language="javascript">
+  $(document).ready(function(){
+      var dataTable = $('#Emp_Name').DataTable();
+      $('#Emp_Name').editable({
+          container:'body',
+          selector:'td.Emp_Name',
+          url:'/display',
+          title:'Name',
+          type:'POST',
+          validate:function(value){
+              if($.trim(value) == '')
+              {
+                  return 'This field is required';
+              }
+          }
+      });
+   
+      $('#Band').editable({
+          container:'body',
+          selector:'td.Band',
+          url:'/display',
+          title:'Band',
+          type:'POST',
+          validate:function(value){
+              if($.trim(value) == '')
+              {
+                  return 'This field is required';
+              }
+          }
+      });
+   
+      $('#CCName').editable({
+          container:'body',
+          selector:'td.CCName',
+          url:'/display',
+          title:'CCName',
+          type:'POST',
+          validate:function(value){
+              if($.trim(value) == '')
+              {
+                  return 'This field is required';
+              }
+          }
+      });
+
+      $('#CCID').editable({
+          container:'body',
+          selector:'td.CCID',
+          url:'/display',
+          title:'CCID',
+          type:'POST',
+          validate:function(value){
+              if($.trim(value) == '')
+              {
+                  return 'This field is required';
+              }
+          }
+      });
+  }); 
+</script>
 </html>
