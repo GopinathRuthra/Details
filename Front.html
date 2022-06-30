@@ -12,8 +12,11 @@
 	font-family: 'Montserrat', sans-serif;
 }
 
-body{
-  background-image:url('../static/images/Front_image.jpg')
+body {
+  background-image:url('../static/images/Front_image.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100%;
 }
  
 .wrapper{
@@ -25,18 +28,18 @@ body{
 }
 
 .registration_form{
-	background: #f9fafa;
+  background:linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
 	padding: 30px;
 	border-radius: 5px;
-	width: 800px;
+	width: 650px;
 }
 
 .registration_form .title{
 	text-align: center;
-	font-size: 22px;
+	font-size: 20px;
 	text-transform: uppercase;
-	color: #000000;
-	letter-spacing: 5px;
+	color: #01779b;
+	letter-spacing: 3px;
 	font-weight: 700;
 }
 
@@ -46,10 +49,10 @@ body{
 }
 
 .btn {
-    float:left;
+   float:center;
    width:49%;
    padding:10px 20px;
-   background-color: #4bdbff;
+   background-color: #71e3ff;
    font-size:17px;
    border:none;
    border-radius:5px;
@@ -58,8 +61,8 @@ body{
 }
 
 .btn:hover {
-  background-color: #f4f7f6;
-  color:rgb(0, 0, 0);
+  background-color: #026f7e;
+  color:rgb(161, 161, 161);
 }
     </style>
     <meta charset="utf-8">
@@ -70,11 +73,10 @@ body{
         <div class="wrapper">
           <div class="registration_form">
             <div class="title">Employee and Asset Database Details</div><br></br>
-            <form id="form"> 
-              <a href="{{ url_for('index') }}"> Add the Employee & Asset Details </a><br></br>
-              <a href="{{ url_for('display') }}"> View the Employee & Asset Details </a><br></br>
-              <a href="{{ url_for('delete') }}"> Delete the Employee & Asset Details </a>
-      	    </form>
+            <center><form id="form"> 
+              <center><a href="{{ url_for('index') }}" class="btn btn-success"> Add the Employee & Asset Details </a><br></br></center>
+              <center><a href="{{ url_for('display') }}"class="btn btn-success"> View the Employee & Asset Details </a><br></br></center>
+      	    </form></center>
             </div>
           </div>
         </div>
