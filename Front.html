@@ -52,17 +52,17 @@ body {
    float:center;
    width:49%;
    padding:10px 20px;
-   background-color: #71e3ff;
+   background-color: #5b027e;
    font-size:17px;
    border:none;
    border-radius:5px;
-   color:#000000;
+   color:#fdfdfd;
    cursor:pointer;
 }
 
 .btn:hover {
-  background-color: #026f7e;
-  color:rgb(161, 161, 161);
+  background-color: #b804ff;
+  color:rgb(255, 255, 255);
 }
     </style>
     <meta charset="utf-8">
@@ -74,8 +74,8 @@ body {
           <div class="registration_form">
             <div class="title">Employee and Asset Database Details</div><br></br>
             <center><form id="form"> 
-              <center><a href="{{ url_for('index') }}" class="btn btn-success"> Add the Employee & Asset Details </a><br></br></center>
-              <center><a href="{{ url_for('display') }}"class="btn btn-success"> View the Employee & Asset Details </a><br></br></center>
+              <center><a href="{{ url_for('index') }}" class="btn btn-success" style="text-decoration: none;"> Add the Employee & Asset Details </a><br></br></center>
+              <center><a href="{{ url_for('display') }}"class="btn btn-success" style="text-decoration: none;"> View the Employee & Asset Details </a><br></br></center>
       	    </form></center>
             </div>
           </div>
