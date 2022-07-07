@@ -19,24 +19,53 @@
           </div>
           <div class="form-group right">
             <label for="Name" class="label-title">Name : *</label>
-            <input type="text" id="Emp_Name" name="Emp_Name" class="form-input" placeholder="Enter you Name" required="required" readonly/>
+            <input type="text" id="Emp_Name" name="Emp_Name" class="form-input" placeholder="Enter you Name" required="required" />
           </div>
         </div>
 
         <div class="horizontal-group">
             <div class="form-group left">
               <label for="Band" class="label-title">Band : *</label>
-              <input type="text" id="Band" name="Band" class="form-input" placeholder="Enter a Band" required="required" readonly/>
+              <input type="text" id="Band" name="Band" class="form-input" placeholder="Enter a Band" required="required" />
             </div>
             <div class="form-group right">
               <label for="Cost center Name" class="label-title">Cost center Name : *</label>
-              <input type="text" id="CCName" name="CCName" class="form-input" placeholder="Enter a Cost center Name" required="required" readonly/>
+              <select class="form-input" id="CCName" name="CCName" class="form-input">
+                <option value="EPS">EPS </option>
+                <option value="FAI-Underwriting">FAI-Underwriting </option>
+                <option value="Homebuilders-SLM">Homebuilders-SLM </option> 
+                <option value="Agency Third Party - BLR">Agency Third Party - BLR </option> 
+                <option value="EndPoint Closing-BLR">EndPoint Closing-BLR </option> 
+                <option value="Safe Escrow">Safe Escrow </option> 
+                <option value="Agent Advantage-SLM">Agent Advantage-SLM </option> 
+                <option value="EndPoint Closing-SLM">EndPoint Closing-SLM</option> 
+                <option value="Agency Third Party-SLM">Agency Third Party-SLM </option> 
+                <option value="FAPCIG-BLR">FAPCIG-BLR </option>
+                <option value="Safe Escrow Remediation">Safe Escrow Remediation </option>
+                <option value="Safe Escrow - BLR">Safe Escrow - BLR </option>
+                <option value="Business First">Business First </option>
+              </select>
             </div>
           </div>
         <div class="horizontal-group">
             <div class="form-group left">
               <label for="Cost center ID" class="label-title">Cost center ID : *</label>
-              <input type="text" id="CCID" name="CCID" class="form-input" placeholder="Enter a Cost center ID" required="required" readonly/>
+              <select class="form-input" id="CCID" name="CCID" class="form-input">
+                <option value="80114">80114 </option>
+                <option value="80218">80218 </option>
+                <option value="80507">80507 </option>
+                <option value="80521">80521 </option>
+                <option value="80244">80244 </option>
+                <option value="80239">80239 </option>
+                <option value="80536">80536 </option>
+                <option value="80558">80558 </option>
+                <option value="80542">80542 </option>
+                <option value="80541">80541 </option>
+                <option value="80228">80228 </option>
+                <option value="80240">80240 </option>
+                <option value="80243">80243 </option>
+                <option value="80236">80236 </option>
+              </select>
             </div>
             <div class="form-group right">
                 <label for="Date Of Joining" class="label-title">Date Of Joining :</label>
@@ -46,11 +75,11 @@
           <div class="horizontal-group">
             <div class="form-group left">
                 <label for="email" class="label-title">Enter your Work Email: *</label>
-                <input type="email" id="W_Email" name="W_Email" class="form-input" required="required" placeholder="Enter your Work Email" readonly/>
+                <input type="email" id="W_Email" name="W_Email" class="form-input" required="required" placeholder="Enter your Work Email" />
             </div>
             <div class="form-group right">
               <label for="Manager" class="label-title">Manager : *</label>
-              <input type="text" id="Manager" name="Manager" class="form-input" placeholder="Enter your Manager Name" required="required" readonly/>
+              <input type="text" id="Manager" name="Manager" class="form-input" placeholder="Enter your Manager Name" required="required" />
             </div>
           </div>
           <div class="horizontal-group">
@@ -72,6 +101,7 @@
               <label class="label-title">Job Role : *</label>
               <select class="form-input" id="Job_Role" name="Job_Role" class="form-input" onchange="showMe(this)">
                 <option value="Trainee">Trainee </option>
+                <option value="Trainer">Trainer </option>
                 <option value="Production">Production </option>
                 <option value="Support">Support </option> 
               </select>
@@ -90,11 +120,11 @@
           <div class="horizontal-group">
             <div class="form-group left">
               <label for="Core Process" class="label-title">Core Process : *</label>
-              <input type="text" id="Core_Processe" name="Core_Process" class="form-input" placeholder="Enter your Core Process" required="required" />
+              <input type="text" id="Core_Process" name="Core_Process" class="form-input" placeholder="Enter your Core Process" required="required" />
             </div>
             <div class="form-group right" >
               <label for="Sub Process" class="label-title">Sub Process : *</label>
-              <input type="text" id="Sub Processe" name="Sub_Process" class="form-input" placeholder="Enter your Sub Process" required="required" />
+              <input type="text" id="Sub_Process" name="Sub_Process" class="form-input" placeholder="Enter your Sub Process" required="required" />
             </div>
           </div>
           <div class="horizontal-group">
@@ -291,12 +321,13 @@
             <input type="text" id="City_Pin" name="City_Pin" class="form-input" placeholder="Enter you City & Pin" required="required" />
           </div>
         </div>
-          
 
-        <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
-        <div class="form-group right"><br></br>    
-          <center><h2> Asset Details</h2></center>
-        </div>            <br></br> 
+          <br><br></br></br>
+          <div class="horizontal-group">
+          <div class="form-group center">
+          <center><h2 align="center"> Asset Details</h2></center>
+        </div>
+        </div>
 
       <div class="horizontal-group">
         <div class="form-group left" >
@@ -452,7 +483,7 @@
                   $('#DOJ').val(text[0][6]);
                   $('#W_Email').val(text[0][7]);
                   $('#Manager').val(text[0][8]);
-                  $('#Band_Change_Date').date(text[0][9]);
+                  $('#Band_Change_Date').val(text[0][9]);
                   console.log('GET response text:');
         console.log(text);
         console.log(JSON.stringify(text))
