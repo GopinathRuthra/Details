@@ -250,15 +250,21 @@ def count():
        con.row_factory = sqlite3.Row
        cur = con.cursor()  
        rows = cur.fetchall()
-       print(rows)
+       
+
+       res="du","lu","ds","dm"
 
        if name == 'du':
-           result=cur.execute("SELECT COUNT(*) FROM details where Type_of_Asset='Company Desktop'")
+           result=cur.execute("SELECT COUNT(*) FROM details where Type_of_Asset='Company Desktop'", res,name)
+           
        elif name == 'lu':
-              result=cur.execute("SELECT COUNT(*) FROM details where Type_of_Asset='Company Laptop'")
+              result=cur.execute("SELECT COUNT(*) FROM details where Type_of_Asset='Company Laptop'", result=name)
+       elif name =='dm':
+              result=cur.execute("SELECT COUNT(*) FROM details where Type_of_Asset='Dual Moniter'", result=name)
        elif name =='ds':
-              result=cur.execute("SELECT COUNT(*) FROM details where Type_of_Asset='Docking Station'")
+              result=cur.execute("SELECT COUNT(*) FROM details where Type_of_Asset='Docking Station'", result=name)
        
+       print(rows)
        con.commit()
        cur.close()
        
