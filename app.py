@@ -248,27 +248,11 @@ def updateemployee():
 def count():
        con = sqlite3.connect("asset1.db")
        con.row_factory = sqlite3.Row
-       cur = con.cursor()  
-       rows = cur.fetchall()
-       
-
-       res="du","lu","ds","dm"
-
-       if name == 'du':
-           result=cur.execute("SELECT COUNT(*) FROM details where Type_of_Asset='Company Desktop'", res,name)
-           
-       elif name == 'lu':
-              result=cur.execute("SELECT COUNT(*) FROM details where Type_of_Asset='Company Laptop'", result=name)
-       elif name =='dm':
-              result=cur.execute("SELECT COUNT(*) FROM details where Type_of_Asset='Dual Moniter'", result=name)
-       elif name =='ds':
-              result=cur.execute("SELECT COUNT(*) FROM details where Type_of_Asset='Docking Station'", result=name)
-       
-       print(rows)
-       con.commit()
-       cur.close()
-       
-       return jsonify(rows,rows) 
+       cur = con.cursor()
+       cur.execute("SELECT COUNT(*) FROM details where Type_of_Asset='Company Desktop'")
+       property_count = cur.fetchone()[0]
+       print(property_count)
+       return jsonify(property_count) 
        
        
              
