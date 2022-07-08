@@ -812,27 +812,13 @@ $(document).ready(function(){
 });
 
     $('#du').ready(function(){
-        $.ajax({url:'/count',
-        container:'body',
-        selector:'du',
-        type:'POST',
-        validate:function(value){
-            if($.trim(value) == '')
-            {
-                $.getJSON('/count').val(),
+        $.getJSON('/count',
                 function(text) {
-                  $('#du').val(text[0]);
-                  console.log('GET response text:');
+                    console.log('GET response text:');
                     console.log(text);
-                    console.log(JSON.stringify(text))
-                    console.log('')
-                    console.log(du.value)
+                  $('div#column h2').html("No. of Desktop Users :" + text);
                 }
-                return 'This field is required';
-            }
-        }
-    });
-});
+)});
 </script>
 
 
@@ -891,9 +877,9 @@ sbu{
         <div class="container" mt-3>
             <h3><img class="fai" src="../static/images/FAI LOGO.jpg">    Employee and Asset Details<img class="sbu" src="../static/images/SBU LOGO.jpg" style="float: right;"></h3>
         <div class="row">
-            <div class="column" style="background-color:rgb(183, 255, 255);">
-            <h2>No. of Desktop Users</h2>
-            <center><p><div class="du" data-type="text">{{du}}</div></p></center>
+            <div id = "column" class="column" style="background-color:rgb(183, 255, 255);">
+            <h2></h2>
+            <center><p><div class="du" data-type="text"></div></p></center>
             </div>
             <div class="column" style="background-color:rgb(183, 255, 255);">
             <h2>Number of Laptop Users</h2>
